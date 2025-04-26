@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Resume Analyzer</h1>
+  <form id="analyzer-form">
+    <label for="jd-link">Paste JD Link (optional):</label>
+    <input type="text" id="jd-link" placeholder="https://example.com/job-desc" />
+
+    <label for="job-desc">Or write the Job Description:</label>
+    <textarea id="job-desc" rows="5"></textarea>
+
+    <label for="mandatory-skills">Mandatory Skills (comma-separated):</label>
+    <input type="text" id="mandatory-skills" />
+
+    <label for="good-skills">Good-to-Have Skills (comma-separated):</label>
+    <input type="text" id="good-skills" />
+
+    <label for="experience">Required Experience:</label>
+    <input type="text" id="experience" />
+
+    <label for="resume-upload">Upload Resumes (PDF, TXT):</label>
+    <input type="file" id="resume-upload" multiple accept=".pdf,.txt" />
+
+    <button type="button" id="analyze-btn">Analyze</button>
+  </form>
+
+  <h2>Results</h2>
+  <table id="results-table">
+    <thead>
+      <tr>
+        <th>Resume Name</th>
+        <th>Match %</th>
+        <th>Justification</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="analyzer.js"></script>
+</body>
+</html>
