@@ -33,17 +33,19 @@ async function parseResume(file) {
 }
 
 async function analyzeResume(jobDesc, mandatorySkills, goodSkills, experience, resumeText) {
-    const response = await fetch("https://your-backend-url.onrender.com/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            jobDescription: jobDesc,
-            mandatorySkills,
-            goodToHaveSkills: goodSkills,
-            requiredExperience: experience,
-            resumeText
-        }),
-    });
+    const response = await fetch("https://resume-analyzer-backend-z2jg.onrender.com/analyze", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    jobDescription,
+    mandatorySkills,
+    goodToHaveSkills,
+    requiredExperience,
+    resumeText,
+  }),
+});
 
     const data = await response.json();
     return {
